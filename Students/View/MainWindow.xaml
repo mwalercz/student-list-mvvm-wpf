@@ -79,7 +79,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Grid DataContext="{Binding SelectedStudent, Mode=TwoWay}" Grid.Row="2" >
+        <Grid Grid.Row="2" >
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
@@ -95,22 +95,20 @@
             <Label Grid.Column="0" Grid.Row="0" Content="Grupa:" />
             <ComboBox Grid.Column="1" 
                       Grid.Row="0" 
-                      ItemsSource="{Binding Groups}"
+                      ItemsSource="{Binding Path=Groups}"
                       DisplayMemberPath="Name"
                       SelectedValuePath="GroupId"
-                      SelectedValue="{Binding GroupId, Mode=TwoWay}">
-            </ComboBox>
+                      SelectedValue="{Binding SelectedStudent.GroupId, Mode=TwoWay}" />
             <Label Grid.Column="0" Grid.Row="1" Content="Imię:" />
-            <TextBox  Grid.Column="1" Grid.Row="1" 
-                      Text="{Binding Path=SelectedStudent.FirstName}" />
+            <TextBox  Grid.Column="1" Grid.Row="1" Text="{Binding SelectedStudent.FirstName}" />
             <Label Grid.Column="0" Grid.Row="2" Content="Nazwisko:" />
-            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding LastName}" />
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding SelectedStudent.LastName}" />
             <Label Grid.Column="0" Grid.Row="3" Content="Miejsce Urodzenia:" />
-            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding BirthPlace}" />
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding SelectedStudent.BirthPlace}" />
             <Label Grid.Column="0" Grid.Row="4" Content="Data Urodzenia:" />
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding BirthDate}" />
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding SelectedStudent.BirthDate}" />
             <Label Grid.Column="0" Grid.Row="5" Content="Indeks:" />
-            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding IndexNo}" />
+            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding SelectedStudent.IndexNo}" />
         </Grid>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
